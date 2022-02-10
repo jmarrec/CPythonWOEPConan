@@ -153,7 +153,15 @@ conan_cmake_autodetect(settings)
 message(STATUS "CONAN: settings=${settings}")
 
 message(STATUS "CONAN: install")
-conan_cmake_install(PATH_OR_REFERENCE . BUILD missing SETTINGS ${settings})
+conan_cmake_install(
+  PATH_OR_REFERENCE
+  .
+  BUILD
+  missing
+  SETTINGS
+  ${settings}
+  OPTIONS
+  "cpython:shared=True")
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
