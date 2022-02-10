@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15.0)
 # cmake_policy(SET CMP0048 NEW)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Do not enable compiler specific extensions, for eg on GCC use -std=c++1z (=c++17) and not -std=gnu++17
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -45,7 +45,7 @@ endif()
 #endif()
 
 add_library(project_options INTERFACE)
-target_compile_features(project_options INTERFACE cxx_std_20)
+target_compile_features(project_options INTERFACE cxx_std_17)
 
 ###############################################################################
 #                                  N I N J A                                  #
