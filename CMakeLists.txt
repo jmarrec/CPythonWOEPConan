@@ -190,4 +190,9 @@ add_executable(MyProgram main.cpp)
 if(LINK_WITH_PYTHON)
   add_compile_definitions(LINK_WITH_PYTHON)
   target_link_libraries(MyProgram PRIVATE project_options CONAN_PKG::cpython)
+  set_target_properties(
+    MyProgram
+    PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Products"
+               ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Products"
+               RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Products")
 endif()
