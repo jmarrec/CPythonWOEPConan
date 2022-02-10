@@ -161,7 +161,8 @@ conan_cmake_install(
   SETTINGS
   ${settings}
   OPTIONS
-  "cpython:shared=True")
+  "cpython:shared=True"
+  "cpython:with_curses=False")
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
@@ -202,5 +203,6 @@ if(LINK_WITH_PYTHON)
     MyProgram
     PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Products"
                ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Products"
-               RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Products")
+               RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/Products
+  ")
 endif()

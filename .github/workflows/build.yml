@@ -43,7 +43,7 @@ jobs:
       shell: bash
       run: |
          if [ "$RUNNER_OS" == "Windows" ]; then
-              ./bin/Release/MyProgram.exe
+              ./bin/MyProgram.exe
          else
               ./bin/MyProgram
          fi
