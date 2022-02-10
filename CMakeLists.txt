@@ -162,7 +162,8 @@ conan_cmake_install(
   ${settings}
   OPTIONS
   "cpython:shared=True"
-  "cpython:with_curses=False")
+  #"cpython:with_curses=False"
+)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)

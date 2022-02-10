@@ -28,6 +28,13 @@ jobs:
         conan config set general.parallel_download=8
         mkdir build/
 
+        if [ "$RUNNER_OS" == "macOS" ]; then
+          echo "Setting MACOSX_DEPLOYMENT_TARGET to 10.15"
+          echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
+          echo "Adding SDKROOT to GITHUB_ENV"
+          echo "SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk" >> $GITHUB_ENV
+        fi;
+
     - name: Configure CMake
       shell: bash
       working-directory: ./build
